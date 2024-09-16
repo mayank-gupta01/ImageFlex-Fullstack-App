@@ -2,8 +2,6 @@ import { Router } from "express";
 import upload from "../middlewares/multer.middleware";
 import { adjustBrightness, adjustSaturation, uploadImage, adjustRotation, adjustCropping, prepareImageToDownload } from "../controllers/imageop.controller";
 
-
-
 const router: Router = Router();
 
 router.route('/upload').post(

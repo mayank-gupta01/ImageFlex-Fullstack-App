@@ -1,10 +1,16 @@
-import UploadImage from "./components/UploadImage";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import UploadPage from "./components/UploadPage";
+import EditPage from "./components/EditPage";
 
 function App() {
   return (
-    <div>
-      <UploadImage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<UploadPage />} />
+        <Route path="/edit" element={<EditPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
   );
 }
 
