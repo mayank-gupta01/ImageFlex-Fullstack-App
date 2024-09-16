@@ -75,7 +75,6 @@ const adjustBrightness = async (req: Request, res: Response): Promise<Response> 
 
         //using sharp adjust the brightness of the compressed image
         const adjustedImage = await sharp(compressedFilePath)
-            // .resize({ width: 300, height: 200 })
             .modulate({
                 lightness: targetLightness - 50,
             })
